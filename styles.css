@@ -1,0 +1,98 @@
+:root {
+  --primary: #1f3a5f;
+  --secondary: #5f7a9a;
+  --tertiary: #ff8a3d;
+  --neutral: #fff9f0;
+  --surface: #ffffff;
+  --success: #2e9e5b;
+  --sight-word: #ffe7a8;
+  --phonics-focus: #d9eeff;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Nunito", Arial, sans-serif;
+  background: var(--neutral);
+  color: #2b2f33;
+}
+
+.app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+.topbar h1 {
+  font-family: "Atkinson Hyperlegible", Arial, sans-serif;
+  margin: 0;
+  color: var(--primary);
+}
+.subtitle { margin-top: 8px; color: #4f5b66; }
+
+.card {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 24px;
+  margin-top: 16px;
+}
+
+.stage-label {
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--secondary);
+}
+
+.word-chip {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  margin: 4px;
+  font-weight: 700;
+}
+
+.word-chip.sight { background: var(--sight-word); }
+.word-chip.phonics { background: var(--phonics-focus); }
+
+.sentence {
+  font-size: 1.35rem;
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.feedback {
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 10px;
+}
+.feedback.success { background: var(--success); color: #fff; }
+.feedback.coach { background: #f4f7fb; }
+
+.actions {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  min-height: 48px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button.alt { background: var(--tertiary); color: #1a1a1a; }
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #cad2dc;
+  font-size: 1rem;
+}

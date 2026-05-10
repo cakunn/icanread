@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I Can Read — MVP v1</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <h1>I Can Read</h1>
+      <p class="subtitle">A warm, confidence-first reading practice app</p>
+    </header>
+
+    <section class="card" id="stage-card">
+      <p class="stage-label" id="stage-label">Warm-up</p>
+      <h2 id="prompt-title">You already know these!</h2>
+      <div id="content"></div>
+      <div class="actions" id="actions"></div>
+    </section>
+
+    <section class="card" id="progress-card">
+      <h3>Session Progress</h3>
+      <p id="progress-text">0 / 0 sentences</p>
+      <p id="stars-text">⭐ 0 stars</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

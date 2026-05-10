@@ -2,23 +2,23 @@
 
 > **ACS** = App Capability Snapshot. This file describes what **I Can Read** can do **right now** — present tense, not roadmap. Update it after every meaningful feature change.
 
-**Code layout**: Documentation-only repository at present: `PRD.md` (product requirements), `ARCHITECTURE.md` (implementation architecture), `ACS.md` (current capability snapshot), `LICENSE`.
+**Code layout**: Code + docs repository: runnable static MVP (`index.html`, `styles.css`, `app.js`) plus `PRD.md`, `ARCHITECTURE.md`, `DESIGN.md`, and `ACS.md`.
 
-**Version label**: `2026.05.06-docs.1` — single source `ACS.md` (until code implementation introduces a dedicated version file); bump on each feature ship.
+**Version label**: `2026.05.09-mvp.1` — single source `ACS.md` (until code implementation introduces a dedicated version file); bump on each feature ship.
 
 ---
 
 ## Problem We Solve
 
-I Can Read currently defines a child-focused guided read-aloud experience for early readers (around age 7) with parent support, including short phonics/sight-word practice sessions, warm corrective feedback, and parent-visible progress and override controls at the product-definition level. Today, the app exists as a detailed specification set (not yet a deployed runtime), and those specifications already encode how reading attempts, feedback tone, mastery tracking, and voice output expectations should work.
+I Can Read currently defines a child-focused guided read-aloud experience for early readers (around age 7) with parent support, including short phonics/sight-word practice sessions, warm corrective feedback, and parent-visible progress and override controls at the product-definition level. Today, the app ships a runnable local MVP that executes the core child session loop (warm-up, sentence reading, praise-first feedback, word spotlight, and recap) with simplified local evaluation and progress state in-browser.
 
 ---
 
 ## Platform
 
-- **Deployment target**: Not yet deployed (planned web-first MVP per architecture document)
-- **Primary browsers / runtimes**: Not applicable in current build (no runnable client yet)
-- **Install / distribution**: Not applicable in current build
+- **Deployment target**: Local static web MVP (browser-opened `index.html`); hosted deployment not yet configured
+- **Primary browsers / runtimes**: Modern desktop/mobile browsers (Chrome, Safari, Firefox, Edge)
+- **Install / distribution**: Open static files directly or serve folder via any static host
 - **Rate limiting**: Not implemented in current build; API boundaries are documented but no active server is running
 - **Environment notes**: Repository is doc-first; no env vars required to read/edit docs
 
@@ -84,7 +84,7 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for the canonical table.
 
 ## Out of Scope (current build)
 
-- Runnable client UI and microphone capture implementation (currently specified only).
+- Real microphone capture and speech-to-text provider integration (current MVP uses typed transcript simulation).
 - Active speech recognition provider integration and production API hosting.
 - Authentication, account system, and cloud multi-device sync runtime.
 - Operational rate limiting, telemetry pipelines, and deployment infrastructure.
@@ -94,4 +94,4 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for the canonical table.
 ## Version Display
 
 - **Location**: Displayed in this document header as the active snapshot version (no app UI exists yet)
-- **Current**: `2026.05.06-docs.1` (see `ACS.md`)
+- **Current**: `2026.05.09-mvp.1` (see `ACS.md`)
