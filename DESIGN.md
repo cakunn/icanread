@@ -535,7 +535,22 @@ logic. Activity screens compose components from server-provided session steps.
 - Do not add extra distractors merely because space is available.
 - Support landscape for tabletop letter tiles and tracing.
 
-## 18. Design Validation
+## 18. Concept Mockups
+
+The following generated iPhone mockups illustrate the intended visual direction:
+
+- [Child home](design/concepts/child-home.png)
+- [Word-building activity](design/concepts/word-building-activity.png)
+- [Decodable story](design/concepts/decodable-story.png)
+- [Parent progress](design/concepts/parent-progress.png)
+
+These mockups are directional references, not implemented screens or final
+component specifications. The written requirements in this document remain the
+source of truth. Implementation must use native, accessible components and
+should not reproduce incidental generated-image details that conflict with the
+design system, pedagogy, privacy rules, or responsive guidance.
+
+## 19. Design Validation
 
 Every major activity requires:
 
