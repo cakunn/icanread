@@ -1,0 +1,44 @@
+name: ICanRead
+options:
+  bundleIdPrefix: com.cakunn
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+targets:
+  ICanRead:
+    type: application
+    platform: iOS
+    sources:
+      - path: ICanRead
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.cakunn.icanread
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: I Can Read
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.education
+        INFOPLIST_KEY_NSMicrophoneUsageDescription: I Can Read uses the microphone only while your child is practicing sounds or reading aloud.
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MACCATALYST: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ENABLE_PREVIEWS: YES
+    scheme:
+      testTargets:
+        - ICanReadTests
+  ICanReadTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: ICanReadTests
+    dependencies:
+      - target: ICanRead
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.cakunn.icanread.tests
+        GENERATE_INFOPLIST_FILE: YES

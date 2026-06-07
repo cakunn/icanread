@@ -1,15 +1,63 @@
-# I Can Read — MVP v1
+# I Can Read
 
-Simple static web MVP implementing the first version of the product from `PRD.md`, `ARCHITECTURE.md`, and `DESIGN.md`.
+An Apple-first, child-led structured-phonics reading tutor. The current build is
+the phase-one native iPhone/iPad foundation.
 
-## What this MVP includes
-- Warm-up words
-- Story round with one sentence at a time
-- Sight-word chips
-- Simple attempt evaluation (typed transcript simulation)
-- Praise-first coaching feedback
-- Word spotlight for tricky words
-- Victory recap with stars
+## Run the iOS App
 
-## Run locally
-Open `index.html` in a browser.
+Requirements:
+
+- Xcode 16+
+- XcodeGen
+
+```sh
+brew install xcodegen
+xcodegen generate
+open ICanRead.xcodeproj
+```
+
+Select the `ICanRead` scheme and an iOS 17+ iPhone or iPad simulator. Without
+configuration, the debug build uses local fixture mode.
+
+Run tests:
+
+```sh
+xcodebuild test \
+  -project ICanRead.xcodeproj \
+  -scheme ICanRead \
+  -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+  CODE_SIGNING_ALLOWED=NO
+```
+
+## Run Supabase Locally
+
+Requirements:
+
+- Docker
+- Supabase CLI
+
+```sh
+brew install supabase/tap/supabase
+supabase start
+supabase db reset
+supabase test db
+```
+
+Copy values from `.env.example` into a local ignored environment file when
+connecting the app to the backend. Fixture mode requires no secrets.
+
+## Project Structure
+
+- `ICanRead/`: SwiftUI presentation, application/domain models, and adapters.
+- `ICanReadTests/`: App unit tests.
+- `backend/contracts/`: Versioned public API contract.
+- `supabase/`: Local platform configuration, migrations, functions, and tests.
+- `PRD.md`, `ARCHITECTURE.md`, `DESIGN.md`: Product source documents.
+- `ACS.md`: Latest verified application capability snapshot.
+- `CHANGELOG.md`: Increment history.
+
+## Documentation Workflow
+
+Read `ACS.md` before starting work. After each completed and verified build
+increment, update `CHANGELOG.md`, `ACS.md`, and every product document affected
+by the change. `AGENTS.md` contains the mandatory Definition of Done.

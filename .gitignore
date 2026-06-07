@@ -1,1 +1,12 @@
+.DS_Store
+.build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+.swiftpm/
+.env
+.env.*
+!.env.example
+supabase/.temp/
+.xcodebuildmcp/
 .worktrees/
