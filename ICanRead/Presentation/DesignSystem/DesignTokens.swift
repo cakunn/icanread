@@ -8,6 +8,9 @@ enum DesignTokens {
     static let listening = Color(red: 0.16, green: 0.43, blue: 0.75)
     static let focusSound = Color(red: 0.92, green: 0.48, blue: 0.16)
     static let success = Color(red: 0.28, green: 0.60, blue: 0.34)
+    static let attention = Color(red: 0.88, green: 0.55, blue: 0.18)
+    static let leaf = Color(red: 0.22, green: 0.38, blue: 0.24)
+    static let shadow = Color.black.opacity(0.12)
 }
 
 struct ChildPrimaryButtonStyle: ButtonStyle {

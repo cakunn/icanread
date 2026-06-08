@@ -123,6 +123,11 @@ Rules:
 - Record uncertainty separately from incorrect answers.
 - Let the parent review the resulting starting placement.
 
+Current implementation note: the native debug build includes a four-turn
+touch-only fixture preview of this interaction model. Its prompts, audio, and
+evidence are visibly marked unreviewed; it does not produce placement or
+mastery.
+
 ### 5.3 Session Loop
 
 Each session follows this structure:

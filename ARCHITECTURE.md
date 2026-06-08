@@ -679,6 +679,12 @@ remains draft until qualified review.
 - Implement sound games, movable letters, word building, and spoken reading.
 - Add reviewed phoneme audio and touch fallback.
 
+The first verified Phase 1 increment provides a local deterministic fixture
+session, persisted touch attempts, support progression, and a parent evidence
+summary. It remains debug-only until fixture prompts and synthetic phonemes are
+replaced by reviewed curriculum and recordings. Authoritative placement,
+mastery, remote synchronization, and speech evidence remain future work.
+
 ### Phase 2: Full MVP Activities
 
 - Add tracing, decodable stories, scavenger hunts, and role-play.

@@ -550,6 +550,11 @@ source of truth. Implementation must use native, accessible components and
 should not reproduce incidental generated-image details that conflict with the
 design system, pedagogy, privacy rules, or responsive guidance.
 
+The first learning-loop preview adopts the concepts' warm natural surface,
+tactile answer cards, centered teacher prompt, and stable Pause, Replay, and
+Help controls. It intentionally uses native symbols rather than treating
+generated concept illustrations as licensed production assets.
+
 ## 19. Design Validation
 
 Every major activity requires:

@@ -2,11 +2,11 @@ import SwiftUI
 
 struct ChildHomeView: View {
     let profile: ChildProfile
+    let onStartAdventure: () -> Void
     let onEnterParentMode: () -> Void
     @State private var showingParentGate = false
 
     private let destinations: [(String, String, String)] = [
-        ("Adventure", "map.fill", "Learning adventures arrive in the next build."),
         ("Stories", "books.vertical.fill", "Curated stories are not available yet."),
         ("Toy Shelf", "shippingbox.fill", "Your toy shelf is ready for future rewards."),
         ("My Creations", "paintpalette.fill", "Creations will appear after learning activities.")
@@ -23,6 +23,37 @@ struct ChildHomeView: View {
                             .foregroundStyle(DesignTokens.textPrimary)
                         Text("What would you like to explore?")
                             .font(.title2)
+                        Button(action: onStartAdventure) {
+                            HStack(spacing: 18) {
+                                Image(systemName: "map.fill")
+                                    .font(.system(size: 44))
+                                    .foregroundStyle(DesignTokens.actionPrimary)
+                                VStack(alignment: .leading, spacing: 5) {
+                                    Text("Adventure")
+                                        .font(.title.bold())
+                                    Text("Try a short sound adventure")
+                                        .font(.headline)
+                                        .foregroundStyle(.secondary)
+                                }
+                                Spacer()
+                                Image(systemName: "chevron.right")
+                                    .font(.title2.bold())
+                            }
+                            .foregroundStyle(DesignTokens.textPrimary)
+                            .padding(22)
+                            .frame(maxWidth: .infinity, minHeight: 126)
+                            .background(
+                                LinearGradient(
+                                    colors: [.white, DesignTokens.success.opacity(0.12)],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                ),
+                                in: RoundedRectangle(cornerRadius: 26)
+                            )
+                            .shadow(color: DesignTokens.shadow, radius: 10, y: 5)
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityHint("Starts the unverified fixture sound preview")
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 155), spacing: 16)], spacing: 16) {
                             ForEach(destinations, id: \.0) { item in
                                 NavigationLink {
@@ -45,6 +76,11 @@ struct ChildHomeView: View {
                                 .buttonStyle(.plain)
                             }
                         }
+                        Label("Preview content has not received literacy or voice review.", systemImage: "exclamationmark.triangle.fill")
+                            .font(.footnote.weight(.semibold))
+                            .foregroundStyle(DesignTokens.textPrimary)
+                            .padding(14)
+                            .background(DesignTokens.attention.opacity(0.18), in: RoundedRectangle(cornerRadius: 14))
                         Button {
                             showingParentGate = true
                         } label: {

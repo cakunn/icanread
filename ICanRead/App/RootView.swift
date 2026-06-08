@@ -20,7 +20,18 @@ struct RootView: View {
             case .childHome(let profile):
                 ChildHomeView(
                     profile: profile,
-                    onEnterParentMode: { route = .parentSetup(profile.setupDraft) }
+                    onStartAdventure: { route = .skillCheck(profile) },
+                    onEnterParentMode: { route = .parentOverview(profile) }
+                )
+            case .skillCheck(let profile):
+                SkillCheckView(profile: profile) {
+                    route = .childHome(profile)
+                }
+            case .parentOverview(let profile):
+                ParentOverviewView(
+                    profile: profile,
+                    onEditSetup: { route = .parentSetup(profile.setupDraft) },
+                    onReturnToChild: { route = .childHome(profile) }
                 )
             }
         }
@@ -63,4 +74,6 @@ enum AppRoute {
     case loading
     case parentSetup(SetupDraft)
     case childHome(ChildProfile)
+    case skillCheck(ChildProfile)
+    case parentOverview(ChildProfile)
 }

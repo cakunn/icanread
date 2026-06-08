@@ -7,7 +7,10 @@ struct ICanReadApp: App {
 
     init() {
         do {
-            modelContainer = try ModelContainer(for: AppProfileRecord.self)
+            modelContainer = try ModelContainer(
+                for: AppProfileRecord.self,
+                AppLearningSessionRecord.self
+            )
         } catch {
             fatalError("Unable to create local data store: \(error)")
         }
