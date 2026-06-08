@@ -1,7 +1,9 @@
 # I Can Read
 
 An Apple-first, child-led structured-phonics reading tutor. The current build is
-the phase-one native iPhone/iPad foundation.
+the phase-one native iPhone/iPad foundation with a debug-only fixture sound
+adventure. The fixture content and synthetic phonemes are unreviewed and do not
+produce placement or mastery.
 
 ## Run the iOS App
 
@@ -28,6 +30,12 @@ xcodebuild test \
   -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
   CODE_SIGNING_ALLOWED=NO
 ```
+
+## TestFlight Distribution
+
+The project uses Apple Developer team `B7879S5SL4`, bundle identifier
+`com.cakunn.icanread`, and version `0.1.0`. Build numbers must increase for each
+App Store Connect upload. Build `0.1.0 (1)` was uploaded on June 7, 2026.
 
 ## Run Supabase Locally
 
